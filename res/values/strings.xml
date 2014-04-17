@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Miner Monitor</string>
+    <string name="title_miner_detail">Miner Detail</string>
+    <string name="host_or_ip_address_label">Host or IP Address</string>
+    <string name="miner_name_label">Miner Name</string>
+    <string name="port_number_label">Port Number</string>
+    <string name="button_label_cancel">Cancel</string>
+    <string name="button_label_continue">Continue</string>
+    <string name="add_miner_dialog_title">Add Miner</string>
+
+</resources>
