@@ -16,6 +16,7 @@ import android.widget.TextView;
  * on handsets.
  */
 public class MinerDetailFragment extends Fragment implements Miner.MinerListener {
+    private static final String TAG = "MinerDetailFragment";
     /**
      * The fragment argument representing the item ID that this fragment
      * represents.
@@ -49,76 +50,76 @@ public class MinerDetailFragment extends Fragment implements Miner.MinerListener
            if (miner!= null) {
         	   miner.registerListener(this);
            } else {
-        	   Log.e(this.getClass().getSimpleName(), "miner is null");
+        	   Log.e(TAG, "miner is null");
            }
         }
     }
 
     @Override
 	public void onActivityCreated(Bundle savedInstanceState) {
-		Log.d(this.getClass().getSimpleName(), "onActivityCreated(" + savedInstanceState + ")");
+		Log.d(TAG, "onActivityCreated(" + savedInstanceState + ")");
 		super.onActivityCreated(savedInstanceState);
 	}
 
 	@Override
 	public void onAttach(Activity activity) {
-		Log.d(this.getClass().getSimpleName(), "onAttach(" + activity + ")");
+		Log.d(TAG, "onAttach(" + activity + ")");
 		super.onAttach(activity);
 	}
 
 	@Override
 	public void onDestroy() {
-		Log.d(this.getClass().getSimpleName(), "onDistroy()");
+		Log.d(TAG, "onDistroy()");
 		miner.unregisterListener(this);
 		super.onDestroy();
 	}
 
 	@Override
 	public void onDestroyView() {
-		Log.d(this.getClass().getSimpleName(), "onDistroyView()");
+		Log.d(TAG, "onDistroyView()");
 		super.onDestroyView();
 	}
 
 	@Override
 	public void onDetach() {
-		Log.d(this.getClass().getSimpleName(), "onDetach()");
+		Log.d(TAG, "onDetach()");
 		super.onDetach();
 	}
 
 	@Override
 	public void onPause() {
-		Log.d(this.getClass().getSimpleName(), "onPause()");
+		Log.d(TAG, "onPause()");
 		super.onPause();
 	}
 
 	@Override
 	public void onResume() {
-		Log.d(this.getClass().getSimpleName(), "onResume()");
+		Log.d(TAG, "onResume()");
 		super.onResume();
 	}
 
 	@Override
 	public void onStart() {
-		Log.d(this.getClass().getSimpleName(), "onStart()");
+		Log.d(TAG, "onStart()");
 		super.onStart();
 	}
 
 	@Override
 	public void onStop() {
-		Log.d(this.getClass().getSimpleName(), "onStop()");
+		Log.d(TAG, "onStop()");
 		super.onStop();
 	}
 
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
-		Log.d(this.getClass().getSimpleName(), "onViewCreated(" + view + ", " + savedInstanceState + ")");
+		Log.d(TAG, "onViewCreated(" + view + ", " + savedInstanceState + ")");
 		super.onViewCreated(view, savedInstanceState);
 	}
 
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-		Log.d(this.getClass().getSimpleName(), "onCreateView(" + inflater + ", " + container + ", " + savedInstanceState + ")");
+		Log.d(TAG, "onCreateView(" + inflater + ", " + container + ", " + savedInstanceState + ")");
         View rootView = inflater.inflate(R.layout.fragment_miner_detail, container, false);
 
         minerView = ((TextView) rootView.findViewById(R.id.miner_detail));
@@ -133,14 +134,14 @@ public class MinerDetailFragment extends Fragment implements Miner.MinerListener
 	@Override
 	public void update(Miner miner) {
 		if (this.miner != miner) {
-			Log.d(this.getClass().getSimpleName(), "from update this.miner != miner");
+			Log.d(TAG, "from update this.miner != miner");
 			return;
 		}
 		
         if (miner != null && minerView != null) {
         	minerView.setText(miner.detailContent());
         } else {
-        	Log.e(this.getClass().getSimpleName(), "miner or minerView is null");
+        	Log.e(TAG, "miner or minerView is null");
         }
 
 	}
